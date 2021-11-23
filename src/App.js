@@ -14,8 +14,8 @@ function App() {
   }
 
   useEffect(() => {
-    if(search){
-      axios.get(`https://fr.openfoodfacts.org//brand/${search}.json`)
+    if(search.length > 3){
+      axios.get(`https://fr.openfoodfacts.org/brand/${search}.json`)
       .then((response) => {
         setBrands(response.data.products);
       })
